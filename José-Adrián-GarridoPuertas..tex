@@ -1,0 +1,324 @@
+\input{preambuloSimple.tex}
+\usepackage{url}
+\usepackage[document]{ragged2e}
+\usepackage{outlines}
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Código}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{Indice de \lstlistingname s}% List of Listings -> List of Algorithms
+\usepackage{xcolor}
+
+\title{	
+	\normalfont \normalsize
+	\begin{figure}[htb]
+		\centering
+		\includegraphics[width=0.25\textwidth]{./imagenes/1}
+	\end{figure}
+	\textsc{\textbf{TRABAJO FIN DE GRADO} \\ Grado en Ingeniería Informática \\ 
+	Curso 2018-2019} \\ [25pt] 
+	\horrule{0.5pt} \\[0.4cm]
+	\huge VR8D \\
+	\huge Aplicando sonido 8D a las tecnologías de realidad virtual
+	\\ 
+	\horrule{2pt} \\[0.5cm]
+	\textbf{Autor}\\ {José Adrián Garrido Puertas}\\[1.0ex]
+	\textbf{Director}\\ {Marcelino Cabrera Cuevas}\\[0.5cm]
+	\includegraphics[width=0.3\textwidth]{imagenes/etsiit_logo.png}\\[0.1cm]
+	\date{\normalsize\today} 
+}
+
+
+
+%----------------------------------------------------------------------------------------
+% DOCUMENTO
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+	
+	\maketitle % Muestra el Título
+	
+	\thispagestyle{empty} 	% Tres paginas en blanco
+	\textcolor[rgb]{1.00,1.00,1.00}{palabra} 
+	\newpage %inserta un salto de página
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.}  
+	\newpage %inserta un salto de página
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% PORTADA
+	%--------------------------------------
+	
+	\include{portada/portada}
+	
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% PREFACIO ESP
+	%--------------------------------------
+	
+	\input{prefacios/prefacio}
+	
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% PREFACIO ING
+	%--------------------------------------
+	
+	\input{prefacios/prefacio_ingles}
+	
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% CONSENTIMIENTO
+	%--------------------------------------
+	
+	\input{prefacios/consentimiento}
+	
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% FIRMA TUTOR
+	%--------------------------------------
+	
+	\input{prefacios/firma_tutor}
+	
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% AGRADECIMIENTOS
+	%--------------------------------------
+	
+	\input{prefacios/agradecimientos}
+	
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% INDICES
+	%--------------------------------------
+	
+	\tableofcontents % para generar el índice de contenidos
+	
+	\listoffigures % para generar índice de imágenes.
+	
+	%\listoftables % para generar índice de tablas.
+	
+	\lstlistoflistings
+
+	\newpage
+	
+	%--------------------------------------
+	% INTRODUCCION
+	%--------------------------------------
+	
+	\input{capitulos/01_Introduccion}
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% ESPECIFICACION DE REQUISITOS
+	%--------------------------------------
+	
+	\input{capitulos/02_EspecificacionRequisitos}
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% PLANIFICACION
+	%--------------------------------------
+	
+	\input{capitulos/03_Planificacion}
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% ANALISIS
+	%--------------------------------------
+	
+	\input{capitulos/04_Analisis}
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% DISENIO
+	%--------------------------------------
+	
+	\input{capitulos/05_Diseno}
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% IMPLEMENTACION
+	%--------------------------------------
+	
+	\input{capitulos/06_Implementacion}
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% PRUEBAS
+	%--------------------------------------
+	
+	\input{capitulos/07_Pruebas}
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% ANALISIS DE NEGOCIO
+	%--------------------------------------
+	
+	\input{capitulos/08_Analisis_negocio}
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% CONCLUSIONES Y FUTUROS
+	%--------------------------------------
+	
+	%\input{capitulos/09_Conclusiones_y_futuros}
+	%\thispagestyle{empty} 
+	%\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	%\newpage %inserta un salto de página
+	
+	%--------------------------------------
+	% MANUAL DE USUARIO
+	%--------------------------------------
+	
+	\input{capitulos/10_Manual_usuario}
+	\thispagestyle{empty} 
+	\textcolor[rgb]{1.00,1.00,1.00}{.} 
+	\newpage %inserta un salto de página
+	
+	%-----------------------------------------------------------------------
+	%							BIBLIOGRAFIA
+	%-----------------------------------------------------------------------
+	
+	\begin{thebibliography}{99}
+		\bibitem{Git} 
+			\textsc{Tutorial GitFlow}
+			\textit{Atlasian}.
+			\newline
+			\url{https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow}
+		\bibitem{Sha} 
+			\textsc{Tutorial shaders}
+			\textit{Unity}.
+			\newline
+			\url{https://docs.unity3d.com/es/current/Manual/Shaders.html}
+		\bibitem{Res} 
+			\textsc{Librería resonance en unity}
+			\textit{Unity}.
+			\newline
+			\url{https://resonance-audio.github.io/resonance-audio/develop/unity/getting-started}
+		\bibitem{Gvr} 
+			\textsc{Librería GoogleVR}
+			\textit{Unity}.
+			\newline
+			\url{https://developers.google.com/vr/develop/unity/get-started-android}
+		\bibitem{Cul} 
+			\textsc{Oclussion Culling}
+			\textit{Unity}.
+			\newline
+			\url{https://docs.unity3d.com/es/current/Manual/OcclusionCulling.html}
+		\bibitem{Res} 
+			\textsc{Descarga Resonance}
+			\textit{Resonance}.
+			\newline
+			\url{https://github.com/resonance-audio/resonance-audio-unity-sdk/releases}
+		\bibitem{Gvr} 
+			\textsc{Descarga GoogleVR}
+			\textit{GoogleVR}.
+			\newline
+			\url{https://github.com/googlevr/gvr-unity-sdk/releases}
+		\bibitem{Chi} 
+			\textsc{Gamificación en China}
+			\textit{Gobierno Chino}.
+			\newline
+			\url{https://innovadores.larazon.es/es/not/gamificacion-de-la-conducta-ciudadana-en-china}	
+		\bibitem{8D} 
+			\textsc{Sonido 8D}
+			\textit{Verdades y mentiras de la nueva forma de escuchar música que te 'hackea' el cerebro}.
+			\newline
+			\url{https://www.yasss.es/sabiduria-pop/audio-8d-que-es-hackea-cerebro_0_2643900156.html}
+		\bibitem{Vre} 
+			\textsc{VR en las aulas}
+			\textit{La realidad virtual en las aulas: ¿Realidad o virtual?}.
+			\newline
+			\url{https://www.educaciontrespuntocero.com/noticias/realidad-virtual-aulas-educacion/68851.htmll}	
+		\bibitem{Gam} 
+			\textsc{Sonido 8D}
+			\textit{Verdades y mentiras de la nueva forma de escuchar música que te 'hackea' el cerebro}.
+			\newline
+			\url{https://www.educativa.com/blog-articulos/gamificacion-el-aprendizaje-divertido/}		
+		\bibitem{Csh} 
+			\textsc{Gamificación}
+			\textit{Gamificación: el aprendizaje divertido}.
+			\newline
+			\url{https://docs.microsoft.com/es-es/dotnet/csharp/getting-started/introduction-to-the-csharp-language-and-the-net-framework}
+		\bibitem{Git} 
+			\textsc{GitKraken}
+			\textit{Información sobre GitKraken}.
+			\newline
+			\url{https://support.gitkraken.com}
+		\bibitem{Csh} 
+			\textsc{Gamificación}
+			\textit{Gamificación: el aprendizaje divertido}.
+			\newline
+			\url{https://docs.microsoft.com/es-es/dotnet/csharp/getting-started/introduction-to-the-csharp-language-and-the-net-framework}
+		\bibitem{Git} 
+			\textsc{GitKraken}
+			\textit{Control de Versiones: ¿Por qué GitKraken?}.
+			\newline
+			\url{https://medium.com/@sergupe6/control-de-versiones-por-qu%C3%A9-gitkraken-ee1f30b4a18f}
+		\bibitem{Cardboard} 
+			\textsc{Cardboard}
+			\textit{Información sobre las cardboard}.
+			\newline
+			\url{https://vr.google.com/intl/es_es/cardboard/}
+		\bibitem{You} 
+			\textsc{Tutorial Retícula}
+			\textit{Unity VR Tutorial - Gaze Timer Interaction + Teleport}.
+			\newline
+			\url{https://www.youtube.com/watch?v=bmMaVTV8UqY}
+		\bibitem{Ray} 
+			\textsc{Raytracing}
+			\textit{Introduction to Ray Tracing: a Simple Method for Creating 3D Images}.
+			\newline
+			\url{https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-ray-tracing?url=3d-basic-rendering/introduction-to-ray-tracing}
+
+
+	\end{thebibliography}
+
+	
+	% \cite{Baz}
+	% \vspace{0.06in}
+
+	%\begin{figure}[htb]
+	%	\centering
+	%	\includegraphics[width=0.4\textwidth]{./imagenes/1}
+	%	\caption{Universidad de Granada.} \label{fig:1}
+	%\end{figure}
+
+
+	
+\end{document}

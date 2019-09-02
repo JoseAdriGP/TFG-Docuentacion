@@ -1,0 +1,36 @@
+\section{Pruebas, testeos y fallos}
+
+\subsection{Introducción}
+
+\quad Como es evidente, a lo largo de un desarrollo, por pequeño que sea, aparecen problemas que el desarrollador debe afrontar utilizando sus dotes deductivas y de búsqueda. Dicho esto, es tarea del mismo buscar una solución que arregle el problema encontrado, o una solución alternativa que cambie la forma de enfocar el objetivo.\\
+
+\quad A continuación se presentan un par de casos que aparecieron durante este desarrollo.\\
+
+\subsection{El caso de las retículas rebeldes}
+
+\quad Siguiendo un tutorial de youtube, se intento hacer un temporizador para la interacciones de la retícula con los objetos.\\
+
+\quad El resultado era satisfactorio dentro del entorno en el PC, pero los problemas comenzron al pasar la aplicación al dispositivo móvil, ya que la reticula de carga no se centraba correctamente, provocando una sensación de mareo al no saber sobre que reticula centrarse.\\ 
+
+\quad La solucion por la que se optó al descubrir que todo era producido por un bug interno producido por incompatibilidades entre la versión de Unity y la del paquete GoogleVR no fue igualar versiones, ya que hubiera implicado rehacer practicamente todo el proyecto, si no que se opto por transformar la retícula base y convertirla en un temporizador cuando fuese necesario. Esto implico, como se explica en el apartado \textit{6.5.3. Retícula}, realizar una serie de modificaciones en el shader de google para el material de la retícula.\\
+
+\subsection{La resina del bosque no me permite andar}
+
+\quad La gran carga gráfica del bosque no solo lagueaba la aplicación, si no que además inutilizaba la retícula y el movimiento del personaje, mientras que el movimiento de cámara seguía en funcionamiento.\\
+
+\quad La solución paso por reducir el detalle de los modelados, pero esto no termino de solucionar el problema, por lo que se optó por el culling, asi como cambiar todo los shaders a a los menos pesados con los que contaba Unity.\\
+
+\quad Esta solución ha hecho que el bosque sea jugable por fin, pero si se nota que va un poco más lento que las otras dos escenas, cuya carga poligonal el mucho menor.\\  
+
+\subsection{Biclope involuntario}
+
+\quad Este problema es algo que ocurre a todo los desarrolladores, pero es interesante comentarlo para que quede constancia de que el error humano existe y a veces es necesario descansar y continuar con el trabajo más adelante.\\
+
+\quad El problema que se presentó fue que en algunas escenas, la retícula no interaccionaba con los elementos dispuestos para ello. Esto fue un problema serio en su momento, pues parecía que tocaría rehacer gran parte del trabajo, pero después de un descanso, se percibió que la retícula estaba duplicada en la escena, lo que probocaba que no interaccionara correctamente. Una vez eliminada la sobrante, todo funcionó como la seda.\\
+
+\newpage
+
+
+
+
+

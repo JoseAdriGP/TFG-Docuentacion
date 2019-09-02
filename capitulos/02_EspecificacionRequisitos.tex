@@ -1,0 +1,148 @@
+\section{Especificaciones y Requisitos}
+
+\subsection{Descripción del proyecto}
+\subsubsection{Introducción}
+\quad En esta sección me dispongo a hablar los requisitos principales para el desarrollo de una aplicación. En el caso presentado, podemos saber que el proyecto comparte similitudes con el desarrollo de un videjuego. Esta similitud es debida a que presento una aplicación interactiva para poder testear el algoritmo de sonido 8D. Pero no adelantemos acontecimientos, centremonos en describir el proyecto.
+
+\subsubsection{Equipo de desarrollo}
+\quad Para el desarrollo de una aplicación de estas características que presentamos, haría falta un equipo con formado por los siguientes integrantes:\\
+\begin{outline}
+\1 Gestión/Producción:
+	\2 CEO
+	\2 Directores de proyecto
+	\2 Productores	
+\1 Diseño:
+	\2 Game designer
+	\2 Level designer
+\1 Arte y animación:
+	\2 2D artist:
+		\3 Concept artist
+		\3 Pixel artist
+		\3 UI artist
+	\2 3D artist (modelaje, iluminación, texturización...):
+		\3 Personajes
+		\3 Escenario
+\1 Animación:
+	\2 Rigging
+	\2 Animator
+\1 Sonido:
+	\2 Ingeniero de sonido
+	\2 Compositor
+\1 Programación:
+	\2 Backend
+	\2 Frontend
+\1 Quality Assurance (QA):
+	\2 Testers
+	\2 Control de calidad 
+\end{outline}
+
+\quad En este caso, solo hay una persona trabajando en estos aspectos de forma que se recurre tambien a assets gratuitos, sobre todo para los modelajes. Algunos aspectos son también omitidos, pues en este caso backend es inservible.
+
+\subsubsection{Comparativa de motores gráficos}
+\quad Uno de los aspectos más importantes en el desarrollo de esta aplicación es contar con un framework 4 o un motor gráfico sobre el cual poder desarrollarla. A lo largo de
+los últimos años se han estandarizado una serie de productos que facilitan este desarrollo.\\
+
+\quad Por ello, se estudiarán diferentes opciones disponibles, teniendo en cuenta que no se pretende señalar todos y cada uno de los motores gráficos del mercado sino una
+selección de ellos de acuerdo a mis intenciones de abarcar el máximo espectro posible sin citar a todos.\\
+
+\quad A continuación, se señalan algunos casos:
+\begin{itemize}
+\item{\textbf{Source 2 Engine}}\\
+
+\quad Sucesor del motor gráfico Source propiedad de Valve, y motor de varios juegos famosos como Portal o Half Life. Estará disponible de forma pública y gratuita siempre y cuando se publique para la plataforma de Valve, Steam. Compatible con Vulkan (OpenGL) y usa un motor de físicas propio llamado Rubikon que sustituye a Havok. \\
+
+\quad Algunos de los juegos realizados con él son Counter-Strike: Global Offensive y Dota 2.\\ 
+
+\item{\textbf{Unity}} \\
+
+\quad Disponible para Windows, OS X y Linux, históricamente asociado a juegos de menor presupuesto, juegos indie y de móbiles.\\ 
+
+\quad Dispone de varias versiones: 
+\begin{itemize}
+	\item Unity Personal: gratuita si no se sobrepasan los 100 mil dólares de ingresos
+	\item Unity Plus: suscripción de 35 dólares al año, enfocado a desarrolladores móviles con ingresos menores a 200 mil dólares y que incluyen algunos servicios de Unity
+	\item Unity Professional: suscripción de 125 dólares al mes, sin límite de ingresos, con todos los servicios de Unity
+	\item Unity Enterprise
+	\item Unity Educational 
+\end{itemize}
+\quad Las versiones Pro y Plus ofrecen soporte a la versión y acceso a todas las actualizaciones. También cabe señalar la Asset Store, lugar donde se concentran extensiones, herramientas y assets para los usuarios tanto gratuitos como de pago.\\
+
+\quad Algunos juegos hechos con Unity son Wasteland 2, Pillars of Eternity, Hearthstone o Firewatch.\\ 
+
+\item{\textbf{CryEngine}}\\
+
+\quad Desarrollado por Crytek y usado por primera vez en el juego Far Cry. La versión 5 utiliza de forma nativa DirectX12, Vulkan y soporte para VR.\\  
+
+\quad Introdujo un nuevo modelo de licencias, el “paga lo que quieras”, 100\% royalty-free en la actualidad, para las plataformas Windows, Linux, PlayStation 4, Xbox One, Oculus Rift, HTC-Vive, Open-Source VR y PlayStation VR.\\ 
+
+\quad También posee un bazar, el “CRYENGINE Marketplace” donde los beneficios de las ventas son de un 70\% para el motor y el restante 30\% para el desarrollador del contenido.\\
+
+\quad Juegos que usan este motor: Saga Crysis, Ryse: Son of Rome, Aion Online (MMORPG online).\\
+
+\item{\textbf{Unreal Engine}}\\
+
+\quad Sucesor de Unreal Development Kit (UDK), propiedad de Epic Games. Gratuito en la actualidad, aunque se paga a la empresa un 5\% de los beneficios cada trimestre a partir del momento en que el juego gane sus primeros 3000 dólares. Desarrollado en C++, para su uso en plataformas como Windows, OS X, Linux, iOS, Android, PlayStation 4, Xbox One, Nintendo Switch y navegadores (HTML5). También tiene soporte a Vulkan.\\
+
+\quad Al igual que Unity, tiene su propio bazar llamado “Unreal Engine Marketplace”, donde permite comprar y vender contenido (desde modelos, a tutoriales pasando por sonidos, efectos especiales, etcétera). También ha puesto en marcha un programa llamado “Unreal Dev Grants” con un presupuesto de cinco millones de dólares destinado a financiar a los desarrolladores que presenten proyectos innovadores usando el motor. Probablemente sea el motor más usado en la actualidad.\\
+
+\quad Juegos que usan este motor: DMC (Devil May Cry de Ninja Theory), saga Batman Arkham.\\
+
+\item{\textbf{Snowdrop}}\\
+
+\quad Motor propiedad de Ubisoft creado por Massive Entertainment (Ubisoft). Codificado en C++, tardó cinco años en ser desarrollado.\\
+
+\quad Su punto fuerte es la iluminación y el sistema de destrucción. Utiliza el motor de físicas Havok. Este motor está en esta lista porque a pesar de ser uno de los mejores del mercado no está disponible para todo el mundo: Sólo los equipos de desarrollo de Ubisoft tienen acceso a este motor.\\ 
+
+\quad Juegos: Tom Clancy's: The division, Mario + Rabbids Kingdom Battle, Skull \& Bones.\\
+
+\item{\textbf{Frostbite}}\\
+
+\quad Desarrollado por DICE (Electronic Arts) y diseñado para ser un motor exclusivo de EA. \\
+
+\quad Inicialmente diseñado para hacer juegos en primera persona, ha ido evolucionando abrazando otros géneros. Codificado en C++, C\#, Lua y IronPython. Las plataformas objetivo son PC, PlayStation 4 y Xbox One. Enfocado a permitir una mayor escala de interacciones multijugador en escenarios dinámicamente destruibles con condiciones atmosféricas cambiantes. \\ 
+
+\quad Como Snowdrop, es un motor propietario. Su presencia aquí es para poder comparar dos motores propietarios. \\
+
+\quad Juegos: Battlefield, Need for speed, Dragon Age, Mirror's Edge, FIFA, Star Wars: Battlefront\\
+
+\item{\textbf{Amazon Lumberyard}}\\
+
+\quad Motor propiedad de Amazon, gratuito y orientado a juegos AAA (grandes producciones). \\
+
+\quad Basado en CryEngine, está programado en C++ y en Lua. Tiene como características principales la integración con Amazon Web Services (AWS) y Twitch. El código fuente es completo y gratuito y no hay cuotas de suscripción ni requisitos económicos. \\
+
+\quad Solamente hay que pagar por los servicios de AWS que se utilicen (así es como sacan beneficios). Las plataformas objetivo son Windows, PlayStation 4, Xbox One, iOs, Android (con soporte limitado en estas dos últimas), Oculus Rift, HTC-Vive, OpenSource VR y PlayStation VR.\\
+
+\quad Juegos: Star Citizen\\
+
+\item{\textbf{UbiArt framework}}\\
+
+\quad Motor gráfico propiedad de Ubisoft y diseñado por el creador de Rayman, Michel Ancel. Totalmente centrado en la creación de proyectos 2D y 2.5D, responde a una
+búsqueda de la compañía de facilitar el desarrollo de juegos a un equipo pequeño de personas y con un presupuesto reducido.\\
+
+\quad Su punto fuerte es la facilidad para crear animaciones que da a los artistas y el aspecto artístico presente en los títulos desarrollados con este motor.\\
+
+\quad Juegos: Rayman Origins, Rayman Legends, Valiant Hearts, Child of light \\
+
+\item{\textbf{GameMaker}}\\
+
+\quad Propiedad de YoYo Games y diseñado para permitir a usuarios sin conocimientos de programación desarrollar juegos fácilmente. Contiene un lenguaje de programación de scripts, Game Maker Language (GML), para usuarios experimentados. Licencia EULA.\\
+
+\quad Juegos: Saga Hotline Miami, Undertale.\\
+\end{itemize}
+
+\subsubsection{Dicisión sobre el motor}
+\quad Finalmente me decanto por Unity, principalmente por mi anterior experiencia con él, tarabajando en \textit{Game Jams} como en proyectos personales. Además presenta una gran variedad de assets gratuitos con los que complementar mi proyecto, así como un amplia documentación tanto en su página principal como en foros.
+
+\subsection{Requisitos}
+\subsubsection{Funcionales}
+
+\quad El servicio que esta aplicación proporciona es simple, un entorno virtual por el que poder moverte y con el que interaccionar, así como una integración del algoritmo 8D.\\
+
+\subsubsection{No funcionales}
+
+\quad Aquí si tenemos un par de requisitos a tener en cuenta menos generales, como una tasa de frames estables, así como pocos tiempos de carga.\\
+
+\quad También es necesaria la creación de una serie de entornos sobre los que movernos, así como una interfaz entendible por el usuario.\\
+
+\newpage
