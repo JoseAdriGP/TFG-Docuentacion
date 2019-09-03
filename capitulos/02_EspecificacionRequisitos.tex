@@ -2,10 +2,12 @@
 
 \subsection{Descripción del proyecto}
 \subsubsection{Introducción}
-\quad En esta sección me dispongo a hablar los requisitos principales para el desarrollo de una aplicación. En el caso presentado, podemos saber que el proyecto comparte similitudes con el desarrollo de un videjuego. Esta similitud es debida a que presento una aplicación interactiva para poder testear el algoritmo de sonido 8D. Pero no adelantemos acontecimientos, centremonos en describir el proyecto.
+\quad En esta sección nos a hablar los requisitos principales para el desarrollo de una aplicación que haga uso de los algoritmos de 8D presentados en la actualidad y aplicarlos en un entorno de realidad virtual.\\ 
+
+\quad El caso presentado comparte similitudes con el desarrollo de un videjuego, las cuales son debidas a que la aplicación en cuestion es un entorno interactivo para poder testear el algoritmo de sonido 8D. Esto se desarrolla en los siguientes apartados.
 
 \subsubsection{Equipo de desarrollo}
-\quad Para el desarrollo de una aplicación de estas características que presentamos, haría falta un equipo con formado por los siguientes integrantes:\\
+\quad Para proyectos de mayor envergadura, el desarrollo de una aplicación de estas características requiere un equipo con formado por los siguientes integrantes:\\
 \begin{outline}
 \1 Gestión/Producción:
 	\2 CEO
@@ -36,7 +38,7 @@
 	\2 Control de calidad 
 \end{outline}
 
-\quad En este caso, solo hay una persona trabajando en estos aspectos de forma que se recurre tambien a assets gratuitos, sobre todo para los modelajes. Algunos aspectos son también omitidos, pues en este caso backend es inservible.
+\quad En este caso, el equipo esta concentrado en una sola persona trabajando todos los aspectos, de forma que se recurre tambien a assets gratuitos para poder suplir las disciplinas de las que no se tiene conocimiento.\\ 
 
 \subsubsection{Comparativa de motores gráficos}
 \quad Uno de los aspectos más importantes en el desarrollo de esta aplicación es contar con un framework 4 o un motor gráfico sobre el cual poder desarrollarla. A lo largo de
@@ -45,7 +47,8 @@ los últimos años se han estandarizado una serie de productos que facilitan est
 \quad Por ello, se estudiarán diferentes opciones disponibles, teniendo en cuenta que no se pretende señalar todos y cada uno de los motores gráficos del mercado sino una
 selección de ellos de acuerdo a mis intenciones de abarcar el máximo espectro posible sin citar a todos.\\
 
-\quad A continuación, se señalan algunos casos:
+\quad A continuación, se señalan algunos casos:\\
+
 \begin{itemize}
 \item{\textbf{Source 2 Engine}}\\
 
@@ -132,17 +135,30 @@ búsqueda de la compañía de facilitar el desarrollo de juegos a un equipo pequ
 \end{itemize}
 
 \subsubsection{Dicisión sobre el motor}
-\quad Finalmente me decanto por Unity, principalmente por mi anterior experiencia con él, tarabajando en \textit{Game Jams} como en proyectos personales. Además presenta una gran variedad de assets gratuitos con los que complementar mi proyecto, así como un amplia documentación tanto en su página principal como en foros.
+\quad Finalmente se ha optado por Unity, principalmente por mi anterior experiencia con él, tarabajando en \textit{Game Jams} como en proyectos personales. Además presenta una gran variedad de assets gratuitos con los que complementar mi proyecto, así como un amplia documentación tanto en su página principal como en foros.
 
 \subsection{Requisitos}
 \subsubsection{Funcionales}
 
 \quad El servicio que esta aplicación proporciona es simple, un entorno virtual por el que poder moverte y con el que interaccionar, así como una integración del algoritmo 8D.\\
 
+\quad Por ello los requisitos fundionales son:
+\begin{itemize}
+	\item Creación de un entorno virtual que responda de forma rapida y precisa al usuario.
+	\item Implementación de los algoritmos 8D, tanto para focos de sonido como para entornos con eco.
+	\item Desarrollo de una interfaz adecuada a la realidad virtual
+	\item Desarrollo de entornos 3D donde poder interactuar
+	\item Desarrollo de los distitos elementos que actuarán como foco de sonido 
+\end{itemize}
+
+
 \subsubsection{No funcionales}
 
-\quad Aquí si tenemos un par de requisitos a tener en cuenta menos generales, como una tasa de frames estables, así como pocos tiempos de carga.\\
-
-\quad También es necesaria la creación de una serie de entornos sobre los que movernos, así como una interfaz entendible por el usuario.\\
+\quad Aquí tenemos requisitos no funcionales:
+\begin{itemize}
+	\item Una tasa de frames estables
+	\item Pocos tiempos de carga 
+	\item Elementos en los menús que funcionen correctamente
+\end{itemize}
 
 \newpage
