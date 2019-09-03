@@ -307,12 +307,6 @@ Shader "GoogleVR/Reticle" {
 
 \quad Se adjuntan seguidamente es aspecto de un objeto que posee estas cualidades y el código asociado a \textit{GVRButton.cs}.\\
 
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.35\textwidth]{./imagenes/cube}
-	\caption{Cubo con interacciones}
-\end{figure} 
-
 \lstset{language=[sharp]C, breaklines=true, basicstyle=\footnotesize}
 \begin{lstlisting}[frame=single, caption={GVRButton.cs}]
 using System.Collections;
@@ -323,17 +317,21 @@ using UnityEngine.Events;
 
 public class GVRButton : MonoBehaviour
 {
-    public GameObject pointer;
+    //public GameObject pointer;
+    GameObject pointer;
     public UnityEvent GVRClick;
     public float totalTime = 2;
     bool gvrStatus;
     public float gvrTimer;
     Renderer rend;
     float angle;
+    bool counted;
 
     private void Start()
     {
+        pointer = GameObject.FindWithTag("gvrpointer");
         rend = pointer.GetComponent<Renderer>();
+        counted = false;
     }
 
     // Update is called once per frame
@@ -342,13 +340,14 @@ public class GVRButton : MonoBehaviour
         if (gvrStatus)
         {
             gvrTimer += Time.deltaTime;
-            angle= gvrTimer / totalTime * 360;
+            angle = gvrTimer / totalTime * 360;
             rend.material.SetFloat("_Angle", angle);
         }
 
         if (gvrTimer > totalTime)
         {
             GVRClick.Invoke();
+            gvrStatus = false;
         }
     }
 
@@ -363,9 +362,24 @@ public class GVRButton : MonoBehaviour
         gvrTimer = 0;
         rend.material.SetFloat("_Angle", 360f);
     }
+
+    public void checkBird(string bird)
+    {
+        if (!counted)
+        {
+            GameObject.FindWithTag(bird).GetComponent<Text>().text = "OK";
+            counted = true;
+        }
+    }
 }
 
 \end{lstlisting}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.35\textwidth]{./imagenes/cube}
+	\caption{Cubo con interacciones}
+\end{figure} 
 
 \quad En el código se muestra como acceder al shader y modificar el ángulo que creamos en el apartado anterior dentro de la función update.\\
 
@@ -378,18 +392,19 @@ public class GVRButton : MonoBehaviour
 	\item El prefab\textit{ResonanceAudioSource} al objeto que hará de emisor.
 \end{itemize}
 
-\quad Es importante añadir el audio que queremos que se reproduzca en la propiedad \textit{Audio Source} para que los scripts puedan trabajar.\\
+\quad Es importante añadir el audio que queremos que se reproduzca en la propiedad \textit{Audio Source} para que los scripts puedan trabajar.
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.5\textwidth]{./imagenes/audiosource}
-	\caption{Script ResonaceAudioSource}
+	\includegraphics[width=0.5\textwidth]{./imagenes/icosaedronHiche}
+	\caption{Icosaedro con sonido en la gerarquía de escena}
 \end{figure} 
 
 \begin{figure}[htb]
 	\centering
+	\includegraphics[width=0.5\textwidth]{./imagenes/audiosource}
 	\includegraphics[width=0.5\textwidth]{./imagenes/audiolistener}
-	\caption{Script ResonaceAudioListener}
+	\caption{Script ResonaceAudioSource y ResonanceAudioListener en el Inspector}
 \end{figure} 
 
 \subsection{Implementación por escenas}
@@ -399,7 +414,7 @@ public class GVRButton : MonoBehaviour
 	\subsubsection{Escena Init}
 		\subsubsubsection{Cubo para interactuar}
 
-\quad Ya se ha hablado de el cubo de la pimera escena que interactua con el usuario cuando lo mira, pero tiene varias acciones que realizar en el momento de la iteracción:\\
+\quad Ya se ha hablado de el cubo de la pimera escena que interactua con el usuario cuando lo mira, pero tiene varias acciones que realizar en el momento de la iteracción:
 
 \begin{itemize}
 	\item Cambiar el audio que se esta reproduciendo durante la ejecución.
@@ -453,17 +468,94 @@ public class ChangeSound : MonoBehaviour
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=1\textwidth]{./imagenes/echoroom}
+	\includegraphics[width=0.55\textwidth]{./imagenes/echoroom}
 	\caption{ResonanceAudioRoom ajustado a la habitación de la escena}
 \end{figure} 
 
-\quad Desde el script asociado al prefab, se pueden modificar los materiales que componen las dicerentes caras del cubo que delimita el espacio que dispondrá de eco, así como las características del eco en cuestión (reflectividad, tiempo, ganancia en DB, brillo).\\
+\quad Desde el script asociado al prefab, se pueden modificar los materiales que componen las dicerentes caras del cubo que delimita el espacio que dispondrá de eco, así como las características del eco en cuestión (reflectividad, tiempo, ganancia en DB, brillo).
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=1\textwidth]{./imagenes/audioroom}
+	\includegraphics[width=0.55\textwidth]{./imagenes/audioroom}
 	\caption{Script ResonaceAudioRoom}
 \end{figure}
+
+		\subsubsubsection{Cambiar en escena los materiales de la habitación}
+
+\quad En la aplicación se encuentran varios materiales implementados para los diferentes lados del cubo que delimita la zona. Para simplificarlo, en esta aplicación solo se han implimentado una pequeña porción para demostrar un ejemplo de cambio de material dinámico de estos.\\ 
+
+\quad La implementación de \textit{dropdown} ha sido llevada a cabo mediante el objeto suminstrado por Unity. Debido a que no se dispone de una version de pago para el desarrollo de esta aplicación, no se pueden tocar internamente el script que lo pone en funcionamiento, pero hay total libertad a la hora de añadir lo elementos que se requieran en la implementación.\\
+
+\quad Siquiendo ese razonamiento, durante este desarrollo se han añadido un \textit{eventTrigger} y el escript anteriormente mencionado \textit{GVRButton}, haciendo la configuración requerida para poder interactuar con los elementos internos del dropdown.\\
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./imagenes/dropDownScriptUnity}
+	\caption{Script de un dropdown}
+\end{figure}
+
+\newpage
+\quad Como se puede apreciar, no hay problema a la hora de definir los elementos del desplegable, a los que se les asignara por defecto un valor entero en el orden en el que son añadidos.\\ 
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./imagenes/dropdown}
+	\caption{Dropdown en la gerarquía de escena}
+\end{figure}
+
+\quad Para poder acceder al valor asignado, en la zona de \textit{OnValueChage} se ha añadido al elemento \textit{ResonanceAudioRoom} como GameObject, y se llama a una de las funciones que se montaran dentro de su propio código llamadas \textit{changeMaterialRight}, \textit{changeMaterialLeft}, \textit{changeMaterialFront}, \textit{changeMaterialBack}, \textit{changeMaterialCeiling} y \textit{changeMaterialFloor}.\\
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.3\textwidth]{./imagenes/materialMenu}
+	\includegraphics[width=0.4\textwidth]{./imagenes/materialMenuDeploy}
+	\caption{Menú de cambio de material}
+\end{figure} 
+
+\newpage
+
+\quad La implementación de las seis funciones mencionadas es prácticamente la misma, ya que solo se varía la referenciala lado sobre el que se vana  hacer las modificaciones.\\
+
+\lstset{language=[sharp]C, breaklines=true, basicstyle=\footnotesize}
+\begin{lstlisting}[frame=single, caption={Función changeMaterialRight}]
+...
+public ResonanceAudioRoomManager.SurfaceMaterial rightWall =
+      ResonanceAudioRoomManager.SurfaceMaterial.ConcreteBlockCoarse;
+...
+public void changeMaterialRight(Dropdown mine)
+    {
+        int value = mine.value;
+
+        switch (value)
+        {
+            case 0:
+                rightWall = ResonanceAudioRoomManager.SurfaceMaterial.ConcreteBlockCoarse;
+                break;
+            case 1:
+                rightWall = ResonanceAudioRoomManager.SurfaceMaterial.Transparent;
+                break;
+            case 2:
+                rightWall = ResonanceAudioRoomManager.SurfaceMaterial.CurtainHeavy;
+                break;
+            case 3:
+                rightWall = ResonanceAudioRoomManager.SurfaceMaterial.GlassThick;
+                break;
+            case 4:
+                rightWall = ResonanceAudioRoomManager.SurfaceMaterial.Marble;
+                break;
+            case 5:
+                rightWall = ResonanceAudioRoomManager.SurfaceMaterial.Metal;
+                break;
+            case 6:
+                rightWall = ResonanceAudioRoomManager.SurfaceMaterial.PolishedConcreteOrTile;
+                break;
+            default:
+                break;
+        }
+    }
+
+\end{lstlisting}
+
 
 		\subsubsubsection{Icosaedro el sonido}
 
@@ -509,7 +601,7 @@ public class Teleporter : MonoBehaviour
 	\caption{Script ResonaceAudioRoom}
 \end{figure}
 
-		\subsubsubsection{Pájaros}
+		\subsubsubsection{Pájaros y su búsqueda}
 
 \quad El sonido en los pájaros se genera de la misma forma que en cualquier elemento con sonido (el cubo o el icosaedro), aunque presentan una pequeña diferencia. Donde encontremos dentro del script \textit{lb\_Bird.cs} una reproducción de uno de los cuatro audios que componen los sonidos del pájaro, se debe tener en cuenta que ahora el pájaro no contará con un AudioSource propio, si no que ese componente se encontrará dentro del objeto hijo ResonanceAudioSource que se le añadirá.\\
 
@@ -523,6 +615,24 @@ public class Teleporter : MonoBehaviour
 \quad Deben hacerse cuatro cambios en el script \textit{lb\_Bird.cs}.\\
 
 \quad Lo último a tener en cuenta en esta escena, es cambiar el shader de los materiales que componen la escena a \textit{Movile/Diffuse}. De esta forma se garantiza que el shader está optimizado para trabajar en un móvil.\\
+
+\quad Ahora toca la implementación para poder interactuar con los distitos pájaros que aparecen en la escena, de forma que cuando interactuemos con dentro de la lista \textit{Most Wanted!!} situada encima del menú en el bosque, esta chequee a ese ave en particular y la marque con un \textit{OK}.\\ 
+
+\quad Con ese fin se ha escrito dentro del script GVRButton la función checkBird, a la cual se le pasa un string, el cual será el tag del texto que deberemos cambiar de vacío a "OK".\\
+
+\begin{lstlisting}[frame=single, caption={función checkBird}]
+public void checkBird(string bird)
+    {
+        if (!counted)
+        {
+            GameObject.FindWithTag(bird).GetComponent<Text>().text = "OK";
+            counted = true;
+        }
+    }
+\end{lstlisting}
+
+\quad Es importante recordar que hay que modificar el prefad de cada pajaro que se queira convertir en interactuable mediante los pasos que ya se explicaron con anterioridad.\\
+
 
 \newpage
 
