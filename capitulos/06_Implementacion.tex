@@ -67,25 +67,25 @@
 
 \subsection{Control de versiones}
 
-\quad A continuación, se presenta el árbol de desarrollo de la aplicación en las que se ve un resumen de las modificaciones:\\
+\quad A continuación, se presenta el árbol de desarrollo de la aplicación en las que se ve un resumen de las modificaciones:
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./imagenes/git-tree1}
-	\caption{Primera mitad del árbol de flujo del repositorio}
+	\includegraphics[width=0.6\textwidth]{./imagenes/git-tree1}
+	\caption{Parte superior del gitTree}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./imagenes/git-tree2}
-	\caption{Segunda mitad del árbol de flujo del repositorio}
+	\includegraphics[width=0.6\textwidth]{./imagenes/git-tree2}
+	\caption{Parte inferior del gitTree}
 \end{figure}
 
 \subsubsection{Cambios en el paradigma de interacción del usuario}
 
 \quad El desarrollo de una aplicación no es ni mucho menos algo estático que sigue estrictamente los pasos definidos al inicio de éste durante la planificación. Un buen desarrollo debe saber adaptarse a requisitos que pudieron no tenerse en un principio.\\
 
-\quad Este es el caso de la aplicación aqui presentada, de forma que me dispongo a enumerar unos cuantos cambios que surgieron a lo largo del desarrollo y que merecente ser resaltados por encima de los demás:\\
+\quad Este es el caso de la aplicación aqui presentada, de forma que me dispongo a enumerar unos cuantos cambios que surgieron a lo largo del desarrollo y que merecente ser resaltados por encima de los demás:
 
 \begin{itemize}
 	\item En la versión 5.0.0, desecho un control del movimiento del personaje basado en mando por un control basado únicamente en los que el cardboard nos presenta, pasando el botón de pantalla a a haber que el personaje se mueva hacia adelante, y las interacciones con elementos de las escenas presentadas con un cargador de tiempo. Este cambio surge al plantearme facilitar el uso para el usuario, al no depender de otro dispositivo externo, en este caso un mando.
@@ -101,9 +101,9 @@
 
 \quad Debemos tener en cuenta que, en "Edit>Project Settings", debemos activar la casilla \textit{Virtual Reality Supported} de XR Settings para android en el "Player", y fijar en la pestaña "Other Settings" el \textit{Minimum API Leve} a nivel 19.\\
 
-\subsubsection{Paquetes a descargar}
+\subsubsection{Paquetes a descargar y assets gratuitos}
 
-\quad Los paquetes que necesitaremos para poder utilizar la tecnología necesaria en Unity son:\\
+\quad Los paquetes que necesitaremos para poder utilizar la tecnología necesaria en Unity son:
 
 \begin{itemize}
 	\item ResonaceAudioForUnity\_<versión\_deseada>.unitypackage
@@ -112,13 +112,45 @@
 
 \quad Para instalar un paquete, introduciremos el paquete en cuestión desde la pestaña "Assets>Import Package>Custom Package".\\
 
+\quad Los assest gratuitos sacados de la store de Unity son los siguiente:
+
+\begin{itemize}
+	\item Fantasy Forest 
+	\item Hand Painted Forest Lite
+	\item Living Birds
+\end{itemize}
+
+\quad El primer asset ha sido utilizado para extraer el modelaje de los árboles y la textura 2D para la hierba. La aplicación de los árboles en un terreno, así como de la hierva se hace siguiendo el procedimiento standard de Unity.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./imagenes/fantasyForest}
+	\caption{Fantasy Forest}
+\end{figure} 
+
+\quad El segundo asset ha sido descargado exclusivamente por el modelado de las estatuas, las cuáles han sido integradas al terreno en el que el jugador se sitúa. 
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./imagenes/handPaintedForest}
+	\caption{Hand Painted Forest Lite}
+\end{figure} 
+
+\quad Este último asset pose los modelados y animaciones de los pajáros, ademas de un sistema para hacer que los pájaros se generaran automáticamente para simular un entorno órgánico. en el momento en el que se utizó este asset, lo unico implementado fuero los modelages con sus animaciones, ya que la mayoría de script asociados a la generación automática estaban vacíos, o directamente no existían, por lo que parte del desarrollo se dedicó a reacer gran parte de este asset.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./imagenes/livingBirds}
+	\caption{Living Birds}
+\end{figure} 
+
 \subsection{Jugador}
 
 \quad El jugador estará formado por un GameObject llamado \textit{RealPlayer} que contendrá la "MainCamera". Se introducirá como hijo de ésta el prefab \textit{GvrReticlePointer} que pondrá en el jugador la reticula que utilizaremos para las iteracciones. Hay una serie de cambios en la retícula que se explican en el siguiente subapartado.\\
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=1\textwidth]{./imagenes/player}
+	\includegraphics[width=0.8\textwidth]{./imagenes/player}
 	\caption{Aspecto del Jugador en el árbol de escena}
 \end{figure} 
 
