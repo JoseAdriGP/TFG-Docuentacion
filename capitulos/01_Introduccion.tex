@@ -1,23 +1,50 @@
 \section{Introducción}
 
 \subsection{Contexto}
-\justify 
-\quad En la actualidad, vivimos en una sociedad de información, donde cualquier conocimiento (errado o correcto) es fácilmente alcanzable por cualquier usuario desde la palma de la mano. En un mundo como éste, podemos decir que hemos \textit{"sustituído"} nuestra propia memoria por los distintos dispositivos de almacenamiento de los que disponemos diariamente, ya sean móviles, computadores, pen drives...\\
+\justify
+\quad El contexto en el que vivimos en la actualidad se presenta como un marco en constante cambio, requiriendo de esta forma que las personas sean capaces de adaptarse mejor y más rápidamente a una gran variedad de situaciones.\\
 
-\quad La consecuencia inmediata es que prefiramos demostrar capacidades prácticas en diferentes campos antes que memorizar grandes bloques de información a los cuales tenemos una acceso relativamente sencillo, permitiendonos así consultar los datos concretos que necesitemos en el momento.\\
+\quad En el caso de aquellas personas que trabajan en el sector tecnológico esta situación siempre se ha dado, pero lo cierto es que los últimos años se ha incrementado, teniendo por ejemplo que aprender en el menor tiempo posible un lenguaje de programación, preparar una presentación para un proyecto…\\
+
+\quad Esto nos ha llevado a buscar nuevos conceptos y métodos para poder sobreponernos a una situación que es una gran fuente de estrés, y aunque se han planteado gran cantidad de soluciones que pasan desde algo tan simple como aprender a gestionar tu tiempo de forma eficiente, hasta métodos de aprendizaje alternativos, lo cierto es que la tecnología puede ayudar de una forma mucho más activa de lo que podría parecer a simple vista.\\ 
+
+\quad También hay que remarcar que cada vez se busca poder trabajar de forma remota, ya sea como en el caso de los desarrolladores que pueden estar en constante contacto con miembros del equipo en distintas parte del mundo, conferencias por parte de distintas personas, trabajos conjuntos de arte mediante internet o incluso  llegando a realizarse operaciones a distancia \cite{BBC}. Todo esto requiere que el servicio sea lo más rápido posible, pero cada vez más se exige también que las posibilidades que abarque aumenten de manera gradual.\\ 
+
+\quad Otro tema que también es interesante abordar es el videojuego, que ha demostrado ser una herramienta muy valiosa a la hora del aprendizaje, quedando patente en casos de gente que conoce a la perfección las diferentes etapas del videojuego al que dediquen en ese momento, llegando a saber ingentes cantidades de información de un mundo virtual, basado o no en el nuestro.\\
+
+\quad Hay muchos factores que facilitan la asimilación de información, como la pasión por el tema tratado o lo amena que la información se distribuya de modo que el usuario pueda consumirla en pequeñas dosis, pero un concepto que no empezó a tratarse hasta hace relativamente poco fue el de la \textit{inmersión}, que a priori parece un concepto realmente potente que podría darnos una solución duradera. \\
+
+\quad Todo lo anteriormente mencionado pide una solución totalmente innovadora… o quizás no tan innovadora. Pensándolo fríamente hay buenas ideas en el pasado que quizás no se exploraron por la limitación de la tecnología de la época. Esto ya se está viendo con ideas como el \textit{raytracing}, cuyo fue planteado en 1980 por Turner Whitted.\\
+\quad A mediados del siglo XX se empezaron a ver aparatos para visualizar fotografías en 3D llamados \textit{View-Master} o una patente de 1957 para unas gafas de realidad virtual \cite{Tech}, por no mencionar que uso de entornos completamente virtuales para entrenamientos militares en la aviación lleva con nosotros desde la década de los 70\cite{NCSA}, suceso que demostró que no es necesario realizar una práctica con un avión real para obtener los conocimientos requeridos.\\
+
+\quad Basándome en lo anteriormente expuesto, puedo decir que quizás el concepto de entorno virtual pueda ser de gran ayuda, pero está claro que por sí solo no termina de completar una idea que pueda ser funcional y a la vez no haya ya sido explotada.\\
 
 \subsection{Motivación}
-\quad Últimamente se ha escuchado mucho el concepto de inmersión, tanto aplicado a la enseñanza como a otros campos, lo que me hizo plantearme hasta que puntoesta puede afectar al individuo en el ámbito en el que se encuentre. Por ejemplo, hemos visto a lo largo de estos años como cambiando el paradigma de la enseñanza se puede conseguir que el alumno o estudiante absorba mejor los conocimientos, o como la gamificación puede cambiar la conducta del ciudadano.\\
+\quad La motivación que me lleva a este trabajo no es otra que contribuir a lo anteriormente expuesto. La tecnología avanza inexorablemente y no para de incorporar conceptos de diferentes doctrinas, y es necesario que los desarrolladores dediquemos tiempo para poner ideas nuevas sobre la mesa, o al menos escoger ideas anteriores y explotar su verdadero potencial.\\
 
-\quad Como se puede apreciar, ante las personas se presenta una potente \textit{"arma"} de doble filo, la cuál puede hacer mucho bien o mucho mal en función del uso que se le asigne.\\
+\quad Ante esto, me plantee rescatar el concepto de realidad virtual y unirlo los conceptos de gamificación\cite{Educativa}\cite{GameChina} e inmersión en el entorno.\\
 
+\quad Ahora solo nos queda encontrar una forma de aplicarlos dentro de un entorno virtual, de forma que lo primero que necesitaríamos sería un objetivo para cumplir con la gamificación y alguna forma de aumentar la inmersión entre los distintos escenarios que pudiéramos encontrar en ella.\\
+
+\quad Lo primero que puede venir a la cabeza es mejorar los gráficos en la aplicación, pero lo cierto es que vamos a trabajar con un dispositivo móvil ya que dispositivos como Oculus Rift S cuestan alrededor de 250 euros\cite{OcuRS}.\\
+
+\quad Ante este mercado hay que plantear otra solución que no aumente excesivamente el procesado en la aplicación o requiera de equipos de elevado precio,\\
+
+\quad La solución por la que opté al final fue el sonido 8D. La idea de utilizar esta tecnología surgió a raíz de un video sobre ella por Jaime Altozano \cite{JAlto}, y aunque parezca una tecnología revolucionaria, en realidad tiene ya un tiempo y una serie de problemas \cite{8D} que quizás sí podamos ser capaces de solucionar con la tecnología actual.
 
 \subsection{Objetivo}
-\quad El objetivo abordado por este proyecto no es otro que hacer la modificaciones pertinentes en el algoritmo de sonido 8D con la intención de mejorarlo, e introducirlo dentro de un estor de realida virtual, de forma que podamos observar el concepto de inmersión en estado puro.\\ 
+\quad Ya tenemos las herramientas conceptuales, pero hay que detenerse un poco y analizar cuál o cuáles son los objetivos que se pretenden uniendo esta serie de tecnologías.\\
 
-\quad Si el proyecto finaliza correctamente, el algoritmo demostrará que puede ser aplicado no solo a la aplicación, si no a todo tipo de programas ya sean dedicados a la docencia, estudios variados, uso práctico en terapias de paliamiento del dolor en enfermedades crónicas,...\\
+\quad El primer objetivo por supuesto hacer la modificaciones pertinentes en el algoritmo de sonido 8D con la intención de mejorarlo e introducirlo dentro de una aplicación de realidad virtual.\\
+
+\quad Otro objetivo es observar el concepto de inmersión por parte del usuario al tener distintos focos de sonido que se sitúen a su alrededor, ya sean estáticos o tengan algún tipo de de movimiento asignado.\\
+
+\quad Como último objetivo se encuentra la interacción auditiva por parte del usuario y como esta cambia la experiencia del usuario.\\
 
 \newpage
+
+
+
 
 
 

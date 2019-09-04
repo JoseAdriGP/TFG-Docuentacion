@@ -1,42 +1,38 @@
-\section{Pruebas, testeos y fallos}
+\section{Pruebas}
 
 \subsection{Introducción}
 
-\quad Como es evidente, a lo largo de un desarrollo, por pequeño que sea, aparecen problemas que el desarrollador debe afrontar utilizando sus dotes deductivas y de búsqueda. Dicho esto, es tarea del mismo buscar una solución que arregle el problema encontrado, o una solución alternativa que cambie la forma de enfocar el objetivo.\\
+\quad Como es evidente, a lo largo de un desarrollo, por pequeño que sea, aparecen problemas que el desarrollador debe afrontar utilizando su conocimiento sobre la materia, sus dotes deductivas y de búsqueda. Planteó la situación de esta manera ya que la mayoría de los errores que se pueden encontrar trabajando con un motor de videojuegos como es Unity no vienen determinados por la compilación. Muchas veces se duplica un objeto o simplemente hay un bug asociado a una parte del motor que no responde correctamente con los paquetes que estemos utilizando para el proyecto.\\
+
+\quad Normalmente los problemas de incompatibilidad vienen dados por utilizar una versión del motor muy antigua, o utilizar un asset que no está completo, pero es importante informarse bien con qué se está trabajando y cuáles son los requisitos necesarios para su correcto funcionamiento,\\
+
+\quad Dicho esto, es tarea programador buscar una solución que arregle el problema encontrado, aunque durante el desarrollo de esta aplicación he llegado a la conclusión se que en varias ocasiones es más importante dejar atrás una idea que no avanza correctamente y replantear el problema.\
 
 \quad A continuación se presentan un par de casos que aparecieron durante este desarrollo.\\
 
 \subsection{El caso de las retículas rebeldes}
 
-\quad Siguiendo un tutorial de youtube, se intento hacer un temporizador para la interacciones de la retícula con los objetos.\\
+\quad Siguiendo un tutorial de youtube \cite{You}, se intentó hacer un temporizador para la interacciones de la retícula con los objetos.\\
 
-\quad El resultado era satisfactorio dentro del entorno en el PC, pero los problemas comenzron al pasar la aplicación al dispositivo móvil, ya que la reticula de carga no se centraba correctamente, provocando una sensación de mareo al no saber sobre que reticula centrarse.\\ 
+\quad El resultado era satisfactorio dentro del entorno en el PC, pero los problemas comenzaron al pasar la aplicación al dispositivo móvil, ya que la retícula de carga no se centraba correctamente, provocando una sensación de mareo al no saber sobre que reticula centrarse.\\
 
-\quad La solucion por la que se optó al descubrir que todo era producido por un bug interno producido por incompatibilidades entre la versión de Unity y la del paquete GoogleVR no fue igualar versiones, ya que hubiera implicado rehacer practicamente todo el proyecto, si no que se opto por transformar la retícula base y convertirla en un temporizador cuando fuese necesario. Esto implico, como se explica en el apartado \textit{6.5.3. Retícula}, realizar una serie de modificaciones en el shader de google para el material de la retícula.\\
+\quad La solución por la que se optó al descubrir que todo era producido por un bug interno producido por incompatibilidades entre la versión de Unity y la del paquete GoogleVR no fue igualar versiones, ya que hubiera implicado rehacer prácticamente todo el proyecto, si no que se optó por transformar la retícula base y convertirla en un temporizador cuando fuese necesario. Esto implicó, como se explica en el apartado \textit{6.5.3. Retícula}, realizar una serie de modificaciones en el shader de google para el material de la retícula.\\
 
 \subsection{La resina del bosque no me permite andar}
 
 \quad La gran carga gráfica del bosque no solo lagueaba la aplicación, si no que además inutilizaba la retícula y el movimiento del personaje, mientras que el movimiento de cámara seguía en funcionamiento.\\
 
-\quad La solución paso por reducir el detalle de los modelados, pero esto no termino de solucionar el problema, por lo que se optó por el culling, asi como cambiar todo los shaders a a los menos pesados con los que contaba Unity.\\
+\quad La solución pasó por reducir el detalle de los modelados, pero esto no termino de solucionar el problema, por lo que se optó por el culling, asi como cambiar todo los shaders a a los menos pesados con los que contaba Unity.\\
 
-\quad Esta solución ha hecho que el bosque sea jugable por fin, pero si se nota que va un poco más lento que las otras dos escenas, cuya carga poligonal el mucho menor.\\  
-
-\subsection{Biclope involuntario}
-
-\quad Este problema es algo que ocurre a todo los desarrolladores, pero es interesante comentarlo para que quede constancia de que el error humano existe y a veces es necesario descansar y continuar con el trabajo más adelante.\\
-
-\quad El problema que se presentó fue que en algunas escenas, la retícula no interaccionaba con los elementos dispuestos para ello. Esto fue un problema serio en su momento, pues parecía que tocaría rehacer gran parte del trabajo, pero después de un descanso, se percibió que la retícula estaba duplicada en la escena, lo que probocaba que no interaccionara correctamente. Una vez eliminada la sobrante, todo funcionó como la seda.\\
+\quad Esta solución ha hecho que el bosque sea jugable por fin, pero si se nota que va un poco más lento que las otras dos escenas, cuya carga poligonal el mucho menor.\\
 
 \subsection{Mi código, mis normas}
 
-\quad Aqui nos encontramos con el problema de la encapsulación del código, que ha probocado que las iteracciones con los \textit{dropdown} se vuelvan más problemáticas.\\
+\quad Aquí nos encontramos con el problema de la encapsulación del código, que ha provocado que las interacciones con los \textit{dropdown} se vuelvan más problemáticas.\\
 
 \quad Debido a que no se puede entrar en el script del dropdown para poder hacer modificaciones, no se puede acceder a la lista de elementos de forma sencilla, y mucho menos modificar la interacción con estos elementos, de forma que el click de andar y el de presionar sobre esos elementos se solapa en lugar de poder hacer la interacción con un temporizador y la retícula (como en los otros casos).\\
 
-\quad La solución esta siendo montar un dropdown personal, pero ante la falta de tiempo se ha optado por presentar esta versión con este pequeño bug, que realmente no entropece la experiencia con el sonido, que es lo que se pretende condseguir.\\
-
-
+\quad La solución esta siendo montar un dropdown personal, pero ante la falta de tiempo se ha optado por presentar esta versión con este pequeño bug, que realmente no entorpece la experiencia con el sonido, que es lo que se pretende conseguir.\\
 
 \newpage
 
