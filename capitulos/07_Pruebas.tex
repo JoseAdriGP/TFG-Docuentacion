@@ -10,7 +10,7 @@
 
 \quad A continuación se presentan un par de casos que aparecieron durante este desarrollo.\\
 
-\subsection{El caso de las retículas rebeldes}
+\subsection{El caso de las retículas rebeldes}\label{7.2}
 
 \quad Siguiendo un tutorial de youtube \cite{You}, se intentó hacer un temporizador para la interacciones de la retícula con los objetos.\\
 
@@ -26,13 +26,13 @@
 
 \quad Esta solución ha hecho que el bosque sea jugable por fin, pero si se nota que va un poco más lento que las otras dos escenas, cuya carga poligonal el mucho menor.\\
 
-\subsection{Mi código, mis normas}
+\subsection{Mi código, mis normas}\label{7.4}
 
 \quad Aquí nos encontramos con el problema de la encapsulación del código, que ha provocado que las interacciones con los \textit{dropdown} se vuelvan más problemáticas.\\
 
 \quad Debido a que no se puede entrar en el script del dropdown para poder hacer modificaciones, no se puede acceder a la lista de elementos de forma sencilla, y mucho menos modificar la interacción con estos elementos, de forma que el click de andar y el de presionar sobre esos elementos se solapa en lugar de poder hacer la interacción con un temporizador y la retícula (como en los otros casos).\\
 
-\quad La solución esta siendo montar un dropdown personal, pero ante la falta de tiempo se ha optado por presentar esta versión con este pequeño bug, que realmente no entorpece la experiencia con el sonido, que es lo que se pretende conseguir.\\
+\quad La solución definitiva será montar un dropdown personal, pero ante la falta de tiempo se ha optado por deshabilitar el control de movimiento cuando estamos interaccionando con los dropdown, de forma que al terminar la interacción podamos seguir moviéndonos.\\
 
 \newpage
 
