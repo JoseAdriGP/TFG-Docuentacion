@@ -153,6 +153,33 @@
 \quad El último tipo de elemento que queda por remarcar es un menú con con las mismas interacciones que tenía el de EchoChamber, pero con una particularidad, posee un banner encima suyo que determina si hemos visto o no los pájaros en el postrado.\\
 
 
+\subsection{Modificaciones del algoritmo 8D}
+
+\quad El algoritmo 8D clásico, a día del inicio de la parte práctica de este proyecto, presenta un problema fundamental a la hora de trabajar con un sonido al que se puede determinar la posición de su foco, y es que si el foco se mueve, la transición entre estar delante o detrás del usuario no se realiza de una forma correcta, dando la impresión de que el foco solo se está moviendo delante del usuario.\\
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./imagenes/8D}
+	\caption{Percepción del algoritmo}
+\end{figure}
+\FloatBarrier
+
+\quad Este problema se presenta, pues no se aplica un factor de reducción del sonido que tenga en cuentas dos factores determinantes a la hora del cálculo, que el ser humano tiene orejas que están orientadas, y que además estas poseen un factor de absorción del sonido, de forma que no deben bloquearlo totalmente, si no reducirlo en función de este factor.\\
+
+\quad Para determinar esto y aplicarlo al algoritmo con el que nos encontramos, solo deberemos tener en cuenta que ahora no tenemos un solo vector de orientación para la cámara a la hora determinar la posición de los sonidos en la parte trasera de la cabeza del usuario, si no que debemos hacer una discriminación  los cálculos, sabiendo que la orientación de la oreja afecta a la percepción del sonido, de forma que el cálculos de los vectores que determinan la llegada debe variar aplicando así una reducción extra en la intensidad con la que se percibe.\\
+
+\quad Ahora toca hablar sobre la reducción de sonido que plantea la oreja no por su orientación, si no por su materia.\\
+
+\quad Los cambios efectuados por esto se aplican los últimos, ya que solo afecta a la zona trasera de la cabeza. Teniendo en cuenta el factor de absorción de sonido de la piel humana, que en este caso se ha equiparado al de la goma, se divide el resultado si se encuentra el foco en la zona designada.\\
+
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./imagenes/zonasAlgoritmo}
+	\caption{Zonas del algoritmo}
+\end{figure}
+\FloatBarrier
+
 \newpage
 
 

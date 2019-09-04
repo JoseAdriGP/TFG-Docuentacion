@@ -139,28 +139,51 @@ búsqueda de la compañía de facilitar el desarrollo de juegos a un equipo pequ
 \quad Finalmente se ha optado por Unity, principalmente por mi anterior experiencia con él, trabajando en \textit{Game Jams} como en proyectos personales. Además presenta una gran variedad de assets gratuitos con los que complementar mi proyecto, así como un amplia documentación tanto en su página principal como en foros.
 
 \subsection{Requisitos}
+
+\quad El servicio que esta aplicación proporciona es simple, ya que se compone de tres entornos virtuales que por el que poder moverte e interaccionar, pero debemos tener en cuenta una serie de requisitos indispensables para el correcto funcionamiento de esta.\\
+
+\quad Dicho esto, nos disponemos a enumerar y describir dichos requisitos para una mejor comprensión por parte del lector de las intenciones de esta aplicación.\\
+
 \subsubsection{Funcionales}
 
-\quad El servicio que esta aplicación proporciona es simple, un entorno virtual por el que poder moverte y con el que interaccionar, así como una integración del algoritmo 8D.\\
+\quad Aquí nos disponemos a hablar de todos aquellos requisitos que la aplicación debe proporcionar directamente. En nuestro caso, estos requisitos son:
 
-\quad Por ello los requisitos funcionales son:
 \begin{itemize}
-	\item Creación de un entorno virtual que responda de forma rápida y precisa al usuario.
-	\item Implementación de los algoritmos 8D, tanto para focos de sonido como para entornos con eco.
-	\item Desarrollo de una interfaz adecuada a la realidad virtual
-	\item Desarrollo de entornos 3D donde poder interactuar
-	\item Desarrollo de los distintos elementos que actuarán como foco de sonido
+	\item Entornos virtuales diferenciados entre sí
+	\item Sonido preparado mediante los algoritmos 8D
+	\item Interfaz adecuada a la situación planteada
 \end{itemize}
 
+\quad Aunque sean pocos, es importante tener en cuenta que cada uno de ellos es imprescindible a la hora del correcto funcionamiento de la aplicación, y por consiguiente, no cumplir uno de ellos invalida la aplicación de forma automática. Así pues, desarrollarlos un adecuadamente.\\
+
+\quad Cuando se habla del \textit{entorno virtual} se quiere hacer referencia al hecho de que necesitamos un entorno por el que el usuario pueda moverse y trabajar con los elementos dentro del entorno. Es importante remarcar que en este proyecto, los entornos van aumentando su complejidad gráfica e interna para así desarrollar una sensación de progresión en el usuario.\\
+
+\quad El sonido es imprescindible para el usuario, ya que proporciona el feedback que se requiere de la aplicación para poder interactuar con los elementos de cada escena. Si el sonido funciona mal, o directamente no funciona, esta aplicación puede considerarse un auténtico fracaso.\\
+
+\quad Al hablar de una interfaz adecuada, se hace referencia al hecho debe cumplir con su propósito y proporcionar feedback al usuario sobre qué se está haciendo con ella. Con respecto a la interfaz hay otros conceptos a tener en cuenta, pero ya entran dentro de los requisitos no funcionales, por lo que los desarrollaremos siguiente apartado,\\
 
 \subsubsection{No funcionales}
 
-\quad Aquí tenemos requisitos no funcionales:
-\begin{itemize}
-	\item Una tasa de frames estables
-	\item Pocos tiempos de carga
-	\item Elementos en los menús que funcionen correctamente
-\end{itemize}
+\quad Analizar los requisitos que la aplicación debe proporcionar de forma no directa puede ser un poco más problemático, porque dentro de ella se quieren integrar conceptos más abstractos.\\
+\quad Para hablar de estos requisitos, vamos a hacer una división sobre el objetivo que pretenden.
+
+\subsubsubsection{Requisitos relacionados con el concepto de inmersión}
+
+\quad Esta sección plantea aquellos requisitos que busca hacer que la experiencia con la aplicación sea lo más inmersiva posible, de forma que el usuario pueda “olvidar” en su subconsciente que se encuentra en un entorno virtual.\\
+
+\quad Conseguir esto requiere varios factores a tener en cuenta, pero el primero sobre el que debemos hablar es la tasa de frames, la cual deberá ser estable dentro de las diferentes escenas. La estabilidad predominará sobre la cantidad de frames ya que se va a trabajar con un smartphone antiguo, y una gran cantidad de frames implicaría también reducir el aspecto gráfico de la aplicación.\\
+
+\quad Otro aspecto a tener en cuenta son los tiempos de carga. El planteamiento de esta aplicación es tener unos tiempos de carga prácticamente inexistentes, de forma que el usuario no sienta una desconexión abisal entre las diferentes escenas.\\
+
+\quad Aquí se vuelve a hablar de los menús, ya que estos no deben estar integrados en el visor del usuario, si no que deben ser elementos que encontremos por el entorno. Este planteamiento se debe a que la intención no es simular que el usuario lleva un casco con una interfaz, si no que se pretende simular que el usuario realmente se encuentra en las escenas presentadas. Un menú que interfiera con la visión rompería la ilusión de verse en otro lugar distinto a la habitación donde se está probando la aplicación.\\
+
+\quad El sonido 8D tiene también un valor añadido en los requisitos no funcionales, ya que este debe proporcionar la posición del emisor de una forma clara, de forma que el usuario sepa en todo momento dónde se sitúa el foco emisor. Esto será útil pues varios de los emisores que se encontrarán en la escena serán también elementos con los que poder interaccionar.\\
+
+\subsubsubsection{Requisitos relacionados con el concepto de gamificación}
+
+\quad Se pretende que parte de las interacciones se produzcan surgidas de un interés relacionado con la gamificación. De está forma, el usuario aprenderá a moverse y a interaccionar con los distintos elementos que componen la escena tomando como referencia los videojuegos.\\
+
+
 
 \newpage
 
